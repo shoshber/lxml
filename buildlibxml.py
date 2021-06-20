@@ -347,10 +347,15 @@ def configure_darwin_env(env_setup):
     # configure target architectures on MacOS-X (x86_64 only, by default)
     major_version, minor_version = tuple(map(int, platform.mac_ver()[0].split('.')[:2]))
     if major_version > 7:
+        print('''
+########################################
+????????????????????????????????????????
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+''')
         env_default = {
             'CFLAGS': "-arch x86_64 -O2",
             'LDFLAGS': "-arch x86_64",
-            'MACOSX_DEPLOYMENT_TARGET': "10.6"
+            'MACOSX_DEPLOYMENT_TARGET': "10.9"
         }
         env_default.update(os.environ)
         env_setup['env'] = env_default
